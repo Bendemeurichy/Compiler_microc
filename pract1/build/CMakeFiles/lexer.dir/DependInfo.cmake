@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/workspaces/pract1/src/lexer/lexer.cpp" "/workspaces/pract1/build/CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o"
-  "/workspaces/pract1/src/lexer/token.cpp" "/workspaces/pract1/build/CMakeFiles/lexer.dir/src/lexer/token.cpp.o"
+  "/workspaces/Compiler_microc/pract1/src/lexer/lexer.cpp" "/workspaces/Compiler_microc/pract1/build/CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o"
+  "/workspaces/Compiler_microc/pract1/src/lexer/token.cpp" "/workspaces/Compiler_microc/pract1/build/CMakeFiles/lexer.dir/src/lexer/token.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

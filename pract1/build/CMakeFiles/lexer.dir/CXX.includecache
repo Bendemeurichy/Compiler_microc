@@ -292,15 +292,15 @@ type_traits
 utility
 -
 
-/workspaces/pract1/src/lexer/lexer.cpp
+/workspaces/Compiler_microc/pract1/src/lexer/lexer.cpp
 lexer.hpp
-/workspaces/pract1/src/lexer/lexer.hpp
+/workspaces/Compiler_microc/pract1/src/lexer/lexer.hpp
 llvm/Support/Debug.h
-/workspaces/pract1/src/lexer/llvm/Support/Debug.h
+/workspaces/Compiler_microc/pract1/src/lexer/llvm/Support/Debug.h
 llvm/Support/WithColor.h
-/workspaces/pract1/src/lexer/llvm/Support/WithColor.h
+/workspaces/Compiler_microc/pract1/src/lexer/llvm/Support/WithColor.h
 llvm/Support/raw_ostream.h
-/workspaces/pract1/src/lexer/llvm/Support/raw_ostream.h
+/workspaces/Compiler_microc/pract1/src/lexer/llvm/Support/raw_ostream.h
 cstdio
 -
 fmt/core.h
@@ -310,11 +310,17 @@ iostream
 iterator
 -
 
-/workspaces/pract1/src/lexer/lexer.hpp
+/workspaces/Compiler_microc/pract1/src/lexer/lexer.hpp
 lexer/token.hpp
-/workspaces/pract1/src/lexer/lexer/token.hpp
+/workspaces/Compiler_microc/pract1/src/lexer/lexer/token.hpp
 string
 -
 vector
+-
+
+/workspaces/Compiler_microc/pract1/src/lexer/token.cpp
+lexer/token.hpp
+/workspaces/Compiler_microc/pract1/src/lexer/lexer/token.hpp
+stdexcept
 -
 

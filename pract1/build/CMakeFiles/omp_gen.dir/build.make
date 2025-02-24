@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/pract1
+CMAKE_SOURCE_DIR = /workspaces/Compiler_microc/pract1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/pract1/build
+CMAKE_BINARY_DIR = /workspaces/Compiler_microc/pract1/build
 
 # Utility rule file for omp_gen.
 
@@ -86,6 +86,6 @@ CMakeFiles/omp_gen.dir/clean:
 .PHONY : CMakeFiles/omp_gen.dir/clean
 
 CMakeFiles/omp_gen.dir/depend:
-	cd /workspaces/pract1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/pract1 /workspaces/pract1 /workspaces/pract1/build /workspaces/pract1/build /workspaces/pract1/build/CMakeFiles/omp_gen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /workspaces/Compiler_microc/pract1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/Compiler_microc/pract1 /workspaces/Compiler_microc/pract1 /workspaces/Compiler_microc/pract1/build /workspaces/Compiler_microc/pract1/build /workspaces/Compiler_microc/pract1/build/CMakeFiles/omp_gen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/omp_gen.dir/depend
 

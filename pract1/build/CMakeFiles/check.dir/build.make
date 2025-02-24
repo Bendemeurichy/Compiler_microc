@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/pract1
+CMAKE_SOURCE_DIR = /workspaces/Compiler_microc/pract1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/pract1/build
+CMAKE_BINARY_DIR = /workspaces/Compiler_microc/pract1/build
 
 # Utility rule file for check.
 
@@ -73,7 +73,7 @@ CMAKE_BINARY_DIR = /workspaces/pract1/build
 include CMakeFiles/check.dir/progress.make
 
 CMakeFiles/check:
-	cd /workspaces/pract1/build/test && /usr/local/bin/lit -sv /workspaces/pract1/build/test -o results.json
+	cd /workspaces/Compiler_microc/pract1/build/test && /usr/local/bin/lit -sv /workspaces/Compiler_microc/pract1/build/test -o results.json
 
 check: CMakeFiles/check
 check: CMakeFiles/check.dir/build.make
@@ -90,6 +90,6 @@ CMakeFiles/check.dir/clean:
 .PHONY : CMakeFiles/check.dir/clean
 
 CMakeFiles/check.dir/depend:
-	cd /workspaces/pract1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/pract1 /workspaces/pract1 /workspaces/pract1/build /workspaces/pract1/build /workspaces/pract1/build/CMakeFiles/check.dir/DependInfo.cmake --color=$(COLOR)
+	cd /workspaces/Compiler_microc/pract1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/Compiler_microc/pract1 /workspaces/Compiler_microc/pract1 /workspaces/Compiler_microc/pract1/build /workspaces/Compiler_microc/pract1/build /workspaces/Compiler_microc/pract1/build/CMakeFiles/check.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/check.dir/depend
 

@@ -722,8 +722,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/workspaces/pract1/build",
-		"source" : "/workspaces/pract1"
+		"build" : "/workspaces/Compiler_microc/pract1/build",
+		"source" : "/workspaces/Compiler_microc/pract1"
 	},
 	"version" : 
 	{

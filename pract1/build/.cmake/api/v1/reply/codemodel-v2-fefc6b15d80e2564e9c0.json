@@ -69,14 +69,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "lexer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lexer-Debug-111d320f02596e81f050.json",
+					"jsonFile" : "target-lexer-Debug-fddf043eea6c56873bdd.json",
 					"name" : "lexer",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "microcc::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-microcc-Debug-77fd993581a5656df90c.json",
+					"jsonFile" : "target-microcc-Debug-c5702f0c45cb8ed04e0e.json",
 					"name" : "microcc",
 					"projectIndex" : 0
 				},
@@ -93,8 +93,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/workspaces/pract1/build",
-		"source" : "/workspaces/pract1"
+		"build" : "/workspaces/Compiler_microc/pract1/build",
+		"source" : "/workspaces/Compiler_microc/pract1"
 	},
 	"version" : 
 	{

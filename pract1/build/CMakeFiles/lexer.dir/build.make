@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/pract1
+CMAKE_SOURCE_DIR = /workspaces/Compiler_microc/pract1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/pract1/build
+CMAKE_BINARY_DIR = /workspaces/Compiler_microc/pract1/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lexer.dir/depend.make
@@ -78,29 +78,29 @@ include CMakeFiles/lexer.dir/flags.make
 
 CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o: CMakeFiles/lexer.dir/flags.make
 CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o: ../src/lexer/lexer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o -c /workspaces/pract1/src/lexer/lexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o -c /workspaces/Compiler_microc/pract1/src/lexer/lexer.cpp
 
 CMakeFiles/lexer.dir/src/lexer/lexer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lexer.dir/src/lexer/lexer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/pract1/src/lexer/lexer.cpp > CMakeFiles/lexer.dir/src/lexer/lexer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Compiler_microc/pract1/src/lexer/lexer.cpp > CMakeFiles/lexer.dir/src/lexer/lexer.cpp.i
 
 CMakeFiles/lexer.dir/src/lexer/lexer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lexer.dir/src/lexer/lexer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/pract1/src/lexer/lexer.cpp -o CMakeFiles/lexer.dir/src/lexer/lexer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Compiler_microc/pract1/src/lexer/lexer.cpp -o CMakeFiles/lexer.dir/src/lexer/lexer.cpp.s
 
 CMakeFiles/lexer.dir/src/lexer/token.cpp.o: CMakeFiles/lexer.dir/flags.make
 CMakeFiles/lexer.dir/src/lexer/token.cpp.o: ../src/lexer/token.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lexer.dir/src/lexer/token.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lexer.dir/src/lexer/token.cpp.o -c /workspaces/pract1/src/lexer/token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lexer.dir/src/lexer/token.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lexer.dir/src/lexer/token.cpp.o -c /workspaces/Compiler_microc/pract1/src/lexer/token.cpp
 
 CMakeFiles/lexer.dir/src/lexer/token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lexer.dir/src/lexer/token.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/pract1/src/lexer/token.cpp > CMakeFiles/lexer.dir/src/lexer/token.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Compiler_microc/pract1/src/lexer/token.cpp > CMakeFiles/lexer.dir/src/lexer/token.cpp.i
 
 CMakeFiles/lexer.dir/src/lexer/token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lexer.dir/src/lexer/token.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/pract1/src/lexer/token.cpp -o CMakeFiles/lexer.dir/src/lexer/token.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Compiler_microc/pract1/src/lexer/token.cpp -o CMakeFiles/lexer.dir/src/lexer/token.cpp.s
 
 # Object files for target lexer
 lexer_OBJECTS = \
@@ -114,7 +114,7 @@ liblexer.a: CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o
 liblexer.a: CMakeFiles/lexer.dir/src/lexer/token.cpp.o
 liblexer.a: CMakeFiles/lexer.dir/build.make
 liblexer.a: CMakeFiles/lexer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library liblexer.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library liblexer.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/lexer.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lexer.dir/link.txt --verbose=$(VERBOSE)
 
@@ -128,6 +128,6 @@ CMakeFiles/lexer.dir/clean:
 .PHONY : CMakeFiles/lexer.dir/clean
 
 CMakeFiles/lexer.dir/depend:
-	cd /workspaces/pract1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/pract1 /workspaces/pract1 /workspaces/pract1/build /workspaces/pract1/build /workspaces/pract1/build/CMakeFiles/lexer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /workspaces/Compiler_microc/pract1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/Compiler_microc/pract1 /workspaces/Compiler_microc/pract1 /workspaces/Compiler_microc/pract1/build /workspaces/Compiler_microc/pract1/build /workspaces/Compiler_microc/pract1/build/CMakeFiles/lexer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lexer.dir/depend
 

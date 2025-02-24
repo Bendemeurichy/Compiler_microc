@@ -37,39 +37,92 @@ void Lexer::lexToken() {
     advance();
 
     switch (c) {
-        // Parse whitespace characters
-        case ' ': break;
-        case '\t': break;
-        case '\n': break;
-        case '\r': break;
-        // Parse single character tokens
-        case ',': emitToken(TokenType::COMMA); break;
-        case ';': emitToken(TokenType::SEMICOLON); break;
-        case '(': emitToken(TokenType::LEFT_PAREN); break;
-        case ')': emitToken(TokenType::RIGHT_PAREN); break;
-        case '{': emitToken(TokenType::LEFT_BRACE); break;
-        case '}': emitToken(TokenType::RIGHT_BRACE); break;
-        case '[': emitToken(TokenType::LEFT_BRACKET); break;
-        case ']': emitToken(TokenType::RIGHT_BRACKET); break;
-        case '=':
-            if (peek() == '=') {
-                advance();
-                emitToken(TokenType::EQUALS_EQUALS);
-            } else {
-                emitToken(TokenType::EQUALS);
-            }
-            break;
-        case '<': emitToken(TokenType::LESS_THAN); break;
-        case '>': emitToken(TokenType::GREATER_THAN); break;
-        case '+': emitToken(TokenType::PLUS); break;
-        case '-': emitToken(TokenType::MINUS); break;
-        case '*': emitToken(TokenType::STAR); break;
-        case '/': emitToken(TokenType::SLASH); break;
-        case '^': emitToken(TokenType::CARET); break;
-        case '%': emitToken(TokenType::PERCENT); break;
-        default:
-            error(fmt::format("Invalid character '{}'", c));
-            break;
+    // Parse whitespace characters
+    case ' ':
+        break;
+    case '\t':
+        break;
+    case '\n':
+        break;
+    case '\r':
+        break;
+    // Parse single character tokens
+    case ',':
+        emitToken(TokenType::COMMA);
+        break;
+    case ';':
+        emitToken(TokenType::SEMICOLON);
+        break;
+    case '(':
+        emitToken(TokenType::LEFT_PAREN);
+        break;
+    case ')':
+        emitToken(TokenType::RIGHT_PAREN);
+        break;
+    case '{':
+        emitToken(TokenType::LEFT_BRACE);
+        break;
+    case '}':
+        emitToken(TokenType::RIGHT_BRACE);
+        break;
+    case '[':
+        emitToken(TokenType::LEFT_BRACKET);
+        break;
+    case ']':
+        emitToken(TokenType::RIGHT_BRACKET);
+        break;
+    case '=':
+        if (peek() == '=') {
+            advance();
+            emitToken(TokenType::EQUALS_EQUALS);
+        } else {
+            emitToken(TokenType::EQUALS);
+        }
+        break;
+    case '<':
+        if (peek() == '=') {
+            advance();
+            emitToken(TokenType::LESS_THAN_EQUALS);
+        } else {
+            emitToken(TokenType::LESS_THAN);
+        }
+        break;
+    case '>':
+        if (peek() == '=') {
+            advance();
+            emitToken(TokenType::GREATER_THAN_EQUALS);
+        } else {
+            emitToken(TokenType::GREATER_THAN);
+        }
+        break;
+    case '+':
+        emitToken(TokenType::PLUS);
+        break;
+    case '-':
+        emitToken(TokenType::MINUS);
+        break;
+    case '*':
+        emitToken(TokenType::STAR);
+        break;
+    case '/':
+        emitToken(TokenType::SLASH);
+        break;
+    case '^':
+        emitToken(TokenType::CARET);
+        break;
+    case '%':
+        emitToken(TokenType::PERCENT);
+        break;
+    case '!':
+        if (peek() == '=') {
+            advance();
+            emitToken(TokenType::BANG_EQUALS);
+        }
+        break;
+
+    default:
+        error(fmt::format("Invalid character '{}'", c));
+        break;
     }
 }
 

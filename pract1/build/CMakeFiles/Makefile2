@@ -63,10 +63,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/pract1
+CMAKE_SOURCE_DIR = /workspaces/Compiler_microc/pract1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/pract1/build
+CMAKE_BINARY_DIR = /workspaces/Compiler_microc/pract1/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -99,14 +99,14 @@ clean: CMakeFiles/intrinsics_gen.dir/clean
 CMakeFiles/check.dir/all: CMakeFiles/microcc.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num= "Built target check"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num= "Built target check"
 .PHONY : CMakeFiles/check.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/check.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/check.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 .PHONY : CMakeFiles/check.dir/rule
 
 # Convenience name for target.
@@ -126,14 +126,14 @@ CMakeFiles/check.dir/clean:
 CMakeFiles/microcc.dir/all: CMakeFiles/lexer.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/microcc.dir/build.make CMakeFiles/microcc.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/microcc.dir/build.make CMakeFiles/microcc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num=4,5 "Built target microcc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num=4,5 "Built target microcc"
 .PHONY : CMakeFiles/microcc.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/microcc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/microcc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 .PHONY : CMakeFiles/microcc.dir/rule
 
 # Convenience name for target.
@@ -153,14 +153,14 @@ CMakeFiles/microcc.dir/clean:
 CMakeFiles/acc_gen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/acc_gen.dir/build.make CMakeFiles/acc_gen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/acc_gen.dir/build.make CMakeFiles/acc_gen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num= "Built target acc_gen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num= "Built target acc_gen"
 .PHONY : CMakeFiles/acc_gen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/acc_gen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/acc_gen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 .PHONY : CMakeFiles/acc_gen.dir/rule
 
 # Convenience name for target.
@@ -180,14 +180,14 @@ CMakeFiles/acc_gen.dir/clean:
 CMakeFiles/lexer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer.dir/build.make CMakeFiles/lexer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer.dir/build.make CMakeFiles/lexer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num=1,2,3 "Built target lexer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num=1,2,3 "Built target lexer"
 .PHONY : CMakeFiles/lexer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/lexer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lexer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 .PHONY : CMakeFiles/lexer.dir/rule
 
 # Convenience name for target.
@@ -207,14 +207,14 @@ CMakeFiles/lexer.dir/clean:
 CMakeFiles/omp_gen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/omp_gen.dir/build.make CMakeFiles/omp_gen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/omp_gen.dir/build.make CMakeFiles/omp_gen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num= "Built target omp_gen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num= "Built target omp_gen"
 .PHONY : CMakeFiles/omp_gen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/omp_gen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/omp_gen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 .PHONY : CMakeFiles/omp_gen.dir/rule
 
 # Convenience name for target.
@@ -234,14 +234,14 @@ CMakeFiles/omp_gen.dir/clean:
 CMakeFiles/intrinsics_gen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/intrinsics_gen.dir/build.make CMakeFiles/intrinsics_gen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/intrinsics_gen.dir/build.make CMakeFiles/intrinsics_gen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/pract1/build/CMakeFiles --progress-num= "Built target intrinsics_gen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Compiler_microc/pract1/build/CMakeFiles --progress-num= "Built target intrinsics_gen"
 .PHONY : CMakeFiles/intrinsics_gen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/intrinsics_gen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/intrinsics_gen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/pract1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Compiler_microc/pract1/build/CMakeFiles 0
 .PHONY : CMakeFiles/intrinsics_gen.dir/rule
 
 # Convenience name for target.

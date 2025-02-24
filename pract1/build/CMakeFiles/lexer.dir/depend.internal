@@ -24,8 +24,8 @@ CMakeFiles/lexer.dir/src/lexer/lexer.cpp.o
  /opt/clang+llvm-Release+Asserts-13.0.0-x86_64-linux-gnu-ubuntu-20.04/include/llvm/Support/WithColor.h
  /opt/clang+llvm-Release+Asserts-13.0.0-x86_64-linux-gnu-ubuntu-20.04/include/llvm/Support/raw_ostream.h
  /opt/clang+llvm-Release+Asserts-13.0.0-x86_64-linux-gnu-ubuntu-20.04/include/llvm/Support/type_traits.h
- /workspaces/pract1/src/lexer/lexer.cpp
- /workspaces/pract1/src/lexer/lexer.hpp
+ /workspaces/Compiler_microc/pract1/src/lexer/lexer.cpp
+ /workspaces/Compiler_microc/pract1/src/lexer/lexer.hpp
 CMakeFiles/lexer.dir/src/lexer/token.cpp.o
  ../src/lexer/token.hpp
- /workspaces/pract1/src/lexer/token.cpp
+ /workspaces/Compiler_microc/pract1/src/lexer/token.cpp

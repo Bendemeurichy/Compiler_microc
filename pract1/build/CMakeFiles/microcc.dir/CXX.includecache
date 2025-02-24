@@ -456,13 +456,13 @@ type_traits
 utility
 -
 
-/workspaces/pract1/src/driver/main.cpp
+/workspaces/Compiler_microc/pract1/src/driver/main.cpp
 lexer/lexer.hpp
-/workspaces/pract1/src/driver/lexer/lexer.hpp
+/workspaces/Compiler_microc/pract1/src/driver/lexer/lexer.hpp
 lexer/token.hpp
-/workspaces/pract1/src/driver/lexer/token.hpp
+/workspaces/Compiler_microc/pract1/src/driver/lexer/token.hpp
 llvm/Support/CommandLine.h
-/workspaces/pract1/src/driver/llvm/Support/CommandLine.h
+/workspaces/Compiler_microc/pract1/src/driver/llvm/Support/CommandLine.h
 cstdlib
 -
 fmt/core.h

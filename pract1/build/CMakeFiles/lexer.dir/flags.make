@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DFMT_LOCALE -DFMT_SHARED
 
-CXX_INCLUDES = -I/workspaces/pract1/src -I/opt/clang+llvm-Release+Asserts-13.0.0-x86_64-linux-gnu-ubuntu-20.04/include
+CXX_INCLUDES = -I/workspaces/Compiler_microc/pract1/src -I/opt/clang+llvm-Release+Asserts-13.0.0-x86_64-linux-gnu-ubuntu-20.04/include
 
 CXX_FLAGS = -g -fno-rtti
 
