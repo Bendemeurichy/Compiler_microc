@@ -114,11 +114,31 @@ void Lexer::lexToken() {
         emitToken(TokenType::PERCENT);
         break;
     case '!':
-        if (peek() == '=') {
+        if (peek() != '=') {
+            error("Expected '=' after '!'");
+            break;
+        }
+        advance();
+        emitToken(TokenType::BANG_EQUALS);
+        break;
+    case isdigit(c):
+        while (isdigit(peek()))
             advance();
-            emitToken(TokenType::BANG_EQUALS);
+
+        if (peek() == '.') {
+            advance();
+            if (!isdigit(peek())) {
+                error(". folowed without digit, Invalid float number");
+            }
+
+            while (isdigit(peek()))
+                advance();
+            emitToken(TokenType::FLOAT_LITERAL);
+        } else {
+            emitToken(TokenType::INT_LITERAL);
         }
         break;
+    
 
     default:
         error(fmt::format("Invalid character '{}'", c));
