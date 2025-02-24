@@ -105,6 +105,12 @@ void Lexer::lexToken() {
         emitToken(TokenType::STAR);
         break;
     case '/':
+        if (peek() == '/') {
+            while (peek() != '\n' && !isAtEnd()) {
+                advance();
+            }
+            break;
+        }
         emitToken(TokenType::SLASH);
         break;
     case '^':
@@ -121,26 +127,64 @@ void Lexer::lexToken() {
         advance();
         emitToken(TokenType::BANG_EQUALS);
         break;
-    case isdigit(c):
-        while (isdigit(peek()))
-            advance();
-
-        if (peek() == '.') {
-            advance();
-            if (!isdigit(peek())) {
-                error(". folowed without digit, Invalid float number");
+    case '"':
+        while (peek() != '"' && !isAtEnd()) {
+            if (peek() == '\n') {
+                error("Unterminated string literal");
+                break;
             }
-
-            while (isdigit(peek()))
-                advance();
-            emitToken(TokenType::FLOAT_LITERAL);
+            advance();
+        }
+        if (isAtEnd()) {
+            error("Unterminated string literal");
         } else {
-            emitToken(TokenType::INT_LITERAL);
+            advance();
+            emitToken(TokenType::STRING_LITERAL);
         }
         break;
-    
-
     default:
+        if (isdigit(c)) {
+            while (isdigit(peek()))
+                advance();
+
+            if (peek() == '.') {
+                advance();
+
+                while (isdigit(peek()) || peek() == '.') {
+                    if (peek() == '.') {
+                        error("Float literals must only contain one decimal point");
+                    }
+
+                    advance();
+                }
+                emitToken(TokenType::FLOAT_LITERAL);
+            } else {
+                emitToken(TokenType::INT_LITERAL);
+            }
+            break;
+        }
+        if (isalpha(c) || c == '_') {
+            std::string identifier = "";
+            identifier += c;
+            while (isalnum(peek()) || peek() == '_') {
+                identifier += peek();
+                advance();
+            }
+            if (identifier == "return") {
+                emitToken(TokenType::RETURN);
+            } else if (identifier == "if") {
+                emitToken(TokenType::IF);
+            } else if (identifier == "else") {
+                emitToken(TokenType::ELSE);
+            } else if (identifier == "while") {
+                emitToken(TokenType::WHILE);
+            } else if (identifier == "for") {
+                emitToken(TokenType::FOR);
+            } else {
+                emitToken(TokenType::IDENTIFIER);
+            }
+            break;
+        }
         error(fmt::format("Invalid character '{}'", c));
         break;
     }
