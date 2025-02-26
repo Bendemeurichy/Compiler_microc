@@ -64,8 +64,17 @@ struct Parser::Implementation {
 
     ast::Ptr<ast::VarRefExpr> parseVarRefExpr();
     ast::Ptr<ast::ArrayRefExpr> parseArrayRefExpr();
-    // ASSIGNMENT: Declare additional parsing functions here.\
+    ast::Ptr<ast::FuncCallExpr> parseFuncCallExpr();
 
+    ast::Ptr<ast::Expr> parseUnaryOpExpr();
+    ast::Ptr<ast::Expr> parseCarret();
+    ast::Ptr<ast::Expr> parseMultiplicative();
+    ast::Ptr<ast::Expr> parseAdditive();
+    ast::Ptr<ast::Expr> parseComparison();
+    ast::Ptr<ast::Expr> parseEquality();
+    ast::Ptr<ast::Expr> parseAssignment();
+
+    // ASSIGNMENT: Declare additional parsing functions here.
 };
 
 Parser::Parser(const std::vector<Token> &tokens) {
@@ -227,6 +236,13 @@ Ptr<Stmt> Parser::Implementation::parseStmt() {
     if (peek().type == TokenType::IDENTIFIER) {
         // vardeclstmt or arrdeclstmt
 
+        if (peekNext().type != TokenType::IDENTIFIER) {
+            // Variable ref or array ref
+            Ptr<Expr> expression = parseExpr();
+            eat(TokenType::SEMICOLON);
+            return make_shared<ExprStmt>(expression);
+        }
+
         Token type = eat(TokenType::IDENTIFIER);
         Token name = eat(TokenType::IDENTIFIER);
 
@@ -374,7 +390,7 @@ Ptr<CompoundStmt> Parser::Implementation::parseCompoundStmt() {
 Ptr<Expr> Parser::Implementation::parseExpr() {
     LLVM_DEBUG(llvm::dbgs() << "In parseExpr()\n");
 
-    return parseAtom();
+    return parseAssignment();
 }
 
 // atom = INTEGER | '(' expr ')'
@@ -407,6 +423,10 @@ Ptr<Expr> Parser::Implementation::parseAtom() {
     if (peek().type == TokenType::IDENTIFIER) {
         if (peekNext().type == TokenType::LEFT_BRACKET) {
             return parseArrayRefExpr();
+        }
+
+        if (peekNext().type == TokenType::LEFT_PAREN) {
+            return parseFuncCallExpr();
         }
         return parseVarRefExpr();
     }
@@ -454,7 +474,7 @@ Ptr<VarRefExpr> Parser::Implementation::parseVarRefExpr() {
 }
 
 Ptr<ArrayRefExpr> Parser::Implementation::parseArrayRefExpr() {
-    LLVM_DEBUG(llvm::dbgs() << "In parseArrayRefExprLiteral()\n");
+    LLVM_DEBUG(llvm::dbgs() << "In parseArrayRefExpr()\n");
 
     Token tok = eat(TokenType::IDENTIFIER);
     eat(TokenType::LEFT_BRACKET);
@@ -462,4 +482,107 @@ Ptr<ArrayRefExpr> Parser::Implementation::parseArrayRefExpr() {
     eat(TokenType::RIGHT_BRACKET);
 
     return make_shared<ArrayRefExpr>(tok, index);
+}
+
+Ptr<FuncCallExpr> Parser::Implementation::parseFuncCallExpr() {
+    LLVM_DEBUG(llvm::dbgs() << "In parseFuncCallExpr()\n");
+
+    Token functionName = eat(TokenType::IDENTIFIER);
+    List<Ptr<Expr>> arguments;
+    eat(TokenType::LEFT_PAREN);
+    if (peek().type != TokenType::RIGHT_PAREN) {
+        Ptr<Expr> arg = parseExpr();
+
+        arguments.emplace_back(arg);
+
+        // Parse any remaining arguments
+        while (peek().type == TokenType::COMMA) {
+            eat(TokenType::COMMA);
+
+            Ptr<Expr> arg = parseExpr();
+
+            arguments.emplace_back(arg);
+        }
+    }
+
+    eat(TokenType::RIGHT_PAREN);
+
+    return make_shared<FuncCallExpr>(functionName, arguments);
+}
+
+Ptr<Expr> Parser::Implementation::parseCarret() {
+    LLVM_DEBUG(llvm::dbgs() << "In parseCarret()\n");
+
+    Ptr<Expr> lhs = parseAtom();
+    Token tok = peek();
+    if (tok.type == TokenType::CARET) {
+        eat(TokenType::CARET);
+        Ptr<Expr> rhs = parseCarret();
+        return make_shared<BinaryOpExpr>(lhs, tok, rhs);
+    }
+    return lhs;
+}
+
+Ptr<Expr> Parser::Implementation::parseUnaryOpExpr() {
+    LLVM_DEBUG(llvm::dbgs() << "In parseUnaryOpExpr()\n");
+
+    Token op = peek();
+
+    if (op.type == TokenType::PLUS) {
+        eat(TokenType::PLUS);
+        Ptr<Expr> rhs = parseUnaryOpExpr();
+        return make_shared<UnaryOpExpr>(op, rhs);
+    } else if (op.type == TokenType::MINUS) {
+        eat(TokenType::MINUS);
+        Ptr<Expr> rhs = parseUnaryOpExpr();
+        return make_shared<UnaryOpExpr>(op, rhs);
+    }
+
+    return parseCarret();
+}
+
+Ptr<Expr> Parser::Implementation::parseMultiplicative() {
+    LLVM_DEBUG(llvm::dbgs() << "In parseMultiplivative()\n");
+
+    Ptr<Expr> lhs = parseUnaryOpExpr();
+
+    Token tok = eat(peek().type);
+
+    while (tok.type == TokenType::STAR || tok.type == TokenType::SLASH ||
+           tok.type == TokenType::PERCENT) {
+
+        Ptr<Expr> rhs = parseUnaryOpExpr();
+        lhs = make_shared<BinaryOpExpr>(lhs, tok, rhs);
+    }
+}
+
+Ptr<Expr> Parser::Implementation::parseAdditive() {
+    LLVM_DEBUG(llvm::dbgs() << "In parseAdditive()\n");
+
+    Ptr<Expr> lhs = parseMultiplicative();
+    while (peek().type == TokenType::PLUS || peek().type == TokenType::MINUS) {
+        Token tok = peek();
+
+        if (tok.type == TokenType::PLUS) {
+            eat(TokenType::PLUS);
+        } else if (tok.type == TokenType::MINUS) {
+            eat(TokenType::MINUS);
+        }
+
+        Ptr<Expr> operand = parseMultiplicative();
+        lhs = make_shared<BinaryOpExpr>(lhs, tok, operand);
+    }
+    return lhs;
+}
+
+Ptr<Expr> Parser::Implementation::parseComparison() {
+    LLVM_DEBUG(llvm::dbgs() << "In parseComparison()\n");
+}
+
+Ptr<Expr> Parser::Implementation::parseEquality() {
+    LLVM_DEBUG(llvm::dbgs() << "In parseEquality()\n");
+}
+
+Ptr<Expr> Parser::Implementation::parseAssignment() {
+    LLVM_DEBUG(llvm::dbgs() << "In parseAssignment()\n");
 }
